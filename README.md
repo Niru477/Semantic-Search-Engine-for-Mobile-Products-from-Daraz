@@ -33,3 +33,19 @@ Here is an example of the data distribution from the dataset:
 ![UI](Images/UI.png)
 ![Search Result](Images/Result.png)
 
+## Model Used: SentenceTransformer
+
+This project uses the `SentenceTransformer` model, specifically the `paraphrase-MiniLM-L6-v2` variant, which is a pre-trained transformer model optimized for semantic similarity tasks. It converts text (product titles and search queries) into vector embeddings, allowing for efficient and accurate similarity computation. The model is lightweight and suitable for real-time search applications while maintaining high accuracy in retrieving relevant results.
+
+For more information about SentenceTransformers, you can visit the [official documentation](https://www.sbert.net/).
+
+## Cosine Similarity
+
+To find the most relevant product titles based on user queries, this project uses **cosine similarity** to compare the embeddings of the query and the product titles. Cosine similarity measures the angle between two vectors, providing a value between -1 and 1, where:
+- 1 indicates perfect similarity (same direction),
+- 0 indicates no similarity (orthogonal vectors),
+- -1 indicates perfect dissimilarity (opposite directions).
+
+In this project, cosine similarity is used to rank the products, with the highest similarity score indicating the most relevant results.
+
+
