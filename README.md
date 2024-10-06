@@ -18,4 +18,10 @@ This project implements a semantic search engine that retrieves similar mobile p
 - The most similar documents (product titles) are retrieved and ranked based on their similarity scores.
 
 ### 4. Results
-- The top results, including relevant product details (title, price, rating, etc.), are returned to the user with clickable links to the product pages.
+- The top results, including relevant product details (title, price, rating, etc.), are returned to the user with clickable links to the product pages
+
+
+## Data Visualization
+Here is an example of the data distribution from the dataset:
+
+![Data Visualization](Images/DataVisualization1.png)
