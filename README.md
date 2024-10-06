@@ -27,11 +27,11 @@ Here is an example of the data distribution from the dataset:
 ![Data Visualization](Images/DataVisualization1.png)
 ![Data Visualization](Images/DataVisualization2.png)
 ![Data Visualization](Images/DataVisualization3.png)
-
+![Correlation Matrix](Images/DataVisualization4.png)
 
 ## Output
 ![UI](Images/UI.png)
-![Search Result](Images/Result.png)
+![Search Result](Images/Results.png)
 
 ## Model Used: SentenceTransformer
 
