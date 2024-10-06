@@ -2,7 +2,7 @@
 # Project Overview
 This project implements a semantic search engine that retrieves similar mobile product titles based on user queries. Using natural language processing (NLP) techniques and pre-trained transformer models, the system provides relevant product information such as price, rating, and availability.
 
-#Workflow
+# Workflow
 1. Data Preprocessing and Embedding Storage
 The dataset (product titles and details) is passed through a preprocessing pipeline to clean and standardize the data.
 After preprocessing, the product titles are converted into vector representations (document embeddings) using a SentenceTransformer model.
