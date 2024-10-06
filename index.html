@@ -1,0 +1,188 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;  /* Center horizontally */
+            align-items: center;      /* Center vertically */
+            height: 100vh;           /* Full height of the viewport */
+            margin: 0;                /* Remove default margin */
+            background-color: #f0f0f0; /* Light grey background */
+        }
+        .container {
+            text-align: center;       /* Center text */
+            background: white;        /* White background for the container */
+            border-radius: 10px;      /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 20px;            /* Padding inside the container */
+            width: 400px;             /* Fixed width */
+        }
+        input {
+            width: calc(100% - 22px); /* Full width minus padding */
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;    /* Light grey border */
+            border-radius: 5px;        /* Rounded corners */
+        }
+        button {
+            padding: 10px 15px;        /* Padding for the button */
+            background-color: #007BFF; /* Bootstrap primary color */
+            color: white;               /* White text */
+            border: none;               /* No border */
+            border-radius: 5px;        /* Rounded corners */
+            cursor: pointer;            /* Pointer cursor */
+            transition: background 0.3s; /* Smooth background transition */
+        }
+        button:hover {
+            background-color: #0056b3;  /* Darker blue on hover */
+        }
+        #results {
+            margin-top: 20px;
+            text-align: left;           /* Align results text to the left */
+        }
+        p {
+            margin: 10px 0;            /* Margin for each result */
+            padding: 10px;             /* Padding for results */
+            background-color: #f9f9f9; /* Light grey background for results */
+            border-radius: 5px;        /* Rounded corners */
+            border: 1px solid #ddd;    /* Light border */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Search For Mobile Products in Daraz</h1>
+        <input type="text" id="query" placeholder="Enter your search query...">
+        <button onclick="performSearch()">Search</button>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        async function performSearch() {
+            const query = document.getElementById('query').value;
+
+            const response = await fetch('http://127.0.0.1:5000/search', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ query }),
+            });
+
+            const data = await response.json();
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+
+            if (response.ok) {
+                data.forEach(result => {
+                    const p = document.createElement('p');
+                    // Use innerHTML to create a clickable link for the title
+                    p.innerHTML = `<a href="${result.link}" target="_blank">Title: ${result.title}</a>, Similarity: ${result.similarity}`;
+                    resultsDiv.appendChild(p);
+                });
+            } else {
+                resultsDiv.textContent = `Error: ${data.error}`;
+            }
+        }
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;  /* Center horizontally */
+            align-items: center;      /* Center vertically */
+            height: 100vh;           /* Full height of the viewport */
+            margin: 0;                /* Remove default margin */
+            background-color: #f0f0f0; /* Light grey background */
+        }
+        .container {
+            text-align: center;       /* Center text */
+            background: white;        /* White background for the container */
+            border-radius: 10px;      /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 20px;            /* Padding inside the container */
+            width: 400px;             /* Fixed width */
+        }
+        input {
+            width: calc(100% - 22px); /* Full width minus padding */
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;    /* Light grey border */
+            border-radius: 5px;        /* Rounded corners */
+        }
+        button {
+            padding: 10px 15px;        /* Padding for the button */
+            background-color: #007BFF; /* Bootstrap primary color */
+            color: white;               /* White text */
+            border: none;               /* No border */
+            border-radius: 5px;        /* Rounded corners */
+            cursor: pointer;            /* Pointer cursor */
+            transition: background 0.3s; /* Smooth background transition */
+        }
+        button:hover {
+            background-color: #0056b3;  /* Darker blue on hover */
+        }
+        #results {
+            margin-top: 20px;
+            text-align: left;           /* Align results text to the left */
+        }
+        p {
+            margin: 10px 0;            /* Margin for each result */
+            padding: 10px;             /* Padding for results */
+            background-color: #f9f9f9; /* Light grey background for results */
+            border-radius: 5px;        /* Rounded corners */
+            border: 1px solid #ddd;    /* Light border */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Search For Mobile Products in Daraz</h1>
+        <input type="text" id="query" placeholder="Enter your search query...">
+        <button onclick="performSearch()">Search</button>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        async function performSearch() {
+            const query = document.getElementById('query').value;
+
+            const response = await fetch('http://127.0.0.1:5000/search', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ query }),
+            });
+
+            const data = await response.json();
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+
+            if (response.ok) {
+                data.forEach((result, index) => {
+                    const p = document.createElement('p');
+                    // Use dynamic labels based on index
+                    p.innerHTML = `<a href="${result.link}" target="_blank">Product${index + 1}: ${result.title}</a>`;
+                    resultsDiv.appendChild(p);
+                });
+            } else {
+                resultsDiv.textContent = `Error: ${data.error}`;
+            }
+        }
+    </script>
+</body>
+</html>
