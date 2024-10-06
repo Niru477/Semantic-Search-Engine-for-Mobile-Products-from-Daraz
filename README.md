@@ -25,3 +25,11 @@ This project implements a semantic search engine that retrieves similar mobile p
 Here is an example of the data distribution from the dataset:
 
 ![Data Visualization](Images/DataVisualization1.png)
+![Data Visualization](Images/DataVisualization2.png)
+![Data Visualization](Images/DataVisualization3.png)
+
+
+## Output
+![UI](UI.png)
+![Search Result](Images/Result.png)
+
