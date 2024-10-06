@@ -30,6 +30,6 @@ Here is an example of the data distribution from the dataset:
 
 
 ## Output
-![UI](UI.png)
+![UI](Images/UI.png)
 ![Search Result](Images/Result.png)
 
